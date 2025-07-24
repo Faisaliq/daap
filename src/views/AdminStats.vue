@@ -4,48 +4,51 @@
 
     <!-- Stats -->
     <div class="row text-center mb-4">
-  <!-- Left big box -->
-  <div class="col-md-6">
-    <div class="card h-100">
-      <div class="card-body d-flex flex-column justify-content-center">
-        <h1 class="text-success mb-0">258</h1>
-        <small class="text-muted">Verified MM/DD/YYYY</small>
+      <!-- Left big box -->
+      <div class="col-md-6"> 
+        <div class="card h-100 shadow rounded-1">
+          <div class="card-body d-flex flex-column justify-content-center">
+            <h1 class="text-success mb-0">258</h1>
+            <small class="text-muted">Verified MM/DD/YYYY</small>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Right side stacked layout -->
-  <div class="col-md-6 d-flex flex-column justify-content-between h-100">
-    <div class="row flex-fill">
-      <!-- Top two boxes -->
-      <div class="col-md-6 mb-3">
-        <div class="card shadow-sm border-danger h-100">
-          <div class="card-body d-flex flex-column justify-content-center">
-            <h1 class="text-danger mb-0">17</h1>
-            <small class="text-muted">Flagged</small>
+
+      <!-- Right side stacked layout -->
+      <div class="col-md-6 d-flex flex-column h-100">
+        <!-- Top two boxes with smaller height -->
+        <div class="row flex-grow-1" style="flex: 0 0 30%;">
+          <div class="col-md-6 mb-3">
+            <div class="card shadow rounded-1 h-100">
+              <div class="card-body d-flex flex-column justify-content-center text-center">
+                <h1 class="text-danger mb-0">17</h1>
+                <small class="text-muted">Flagged</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="card shadow rounded-1 h-100">
+              <div class="card-body d-flex flex-column justify-content-center text-center">
+                <h1 class="text-secondary mb-0">96.04%</h1>
+                <small class="text-muted">Avg Similarity Score</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom box takes more space -->
+        <div class="flex-grow-1" style="flex: 0 0 70%;">
+          <div class="card shadow rounded-1 h-100">
+            <div class="card-body d-flex flex-column justify-content-center text-center">
+              <h1 class="text-info mb-0">3.2s</h1>
+              <small class="text-muted">Avg Processing Time</small>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-6 mb-3">
-        <div class="card shadow-sm border-secondary h-100">
-          <div class="card-body d-flex flex-column justify-content-center">
-            <h1 class="text-secondary mb-0">96.04%</h1>
-            <small class="text-muted">Avg Similarity Score</small>
-          </div>
-        </div>
-      </div>
+
     </div>
-    <!-- Bottom box full width -->
-    <div>
-      <div class="card shadow-sm border-info">
-        <div class="card-body d-flex flex-column justify-content-center">
-          <h1 class="text-info mb-0">3.2s</h1>
-          <small class="text-muted">Avg Processing Time</small>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 
@@ -108,7 +111,7 @@
             <td>
               <button class="btn btn-sm btn-success me-1">View</button>
               <button class="btn btn-sm btn-primary me-1">Edit</button>
-              <button class="btn btn-sm btn-danger">Delete</button>
+              <button class="btn btn-outline-danger btn-sm">Delete</button>
             </td>
           </tr>
         </tbody>
@@ -158,7 +161,7 @@ const data = ref([
     email: 'kdewitt@gmail.com',
   },
   // Duplicate items for display
-  ...Array(4).fill({
+  ...Array(2).fill({
     firstName: 'Kenny',
     lastName: 'Dewitt',
     email: 'kdewitt@gmail.com',

@@ -11,7 +11,7 @@
           <i class="fa-solid fa-id-card text-success" style="font-size: 20rem;"></i>
         </div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" @click="closeModal">Close</button>
+          <button class="btn btn-outline-primary" @click="closeModal">Close</button>
         </div>
       </div>
     </div>

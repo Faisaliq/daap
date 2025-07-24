@@ -1,3 +1,25 @@
+<script setup>
+import { ref } from 'vue'
+import DeleteModal from './modals/DeleteModal.vue'
+import IdentityModal from '../components/modals/IdentityModal.vue'
+
+const deleteModal = ref(null)
+const myModal = ref()
+
+const openDelete = (itemName) => {
+  deleteModal.value.show(itemName)
+}
+
+const handleDelete = () => {
+  // Perform actual deletion logic here
+  console.log('Confirmed delete')
+}
+
+function showModal() {
+  myModal.value.openModal()
+}
+</script>
+
 <template>
   <div>
     <!-- Page Title -->
@@ -60,16 +82,21 @@
             <td>Kenny</td>
             <td>Dewitt</td>
             <td>kdewitt@email.com</td>
-            <td><img src="https://via.placeholder.com/32" class="img-thumbnail" /></td>
-            <td><img src="https://via.placeholder.com/32" class="img-thumbnail" /></td>
-            <td><img src="https://via.placeholder.com/32" class="img-thumbnail" /></td>
-            <td><img src="https://via.placeholder.com/32" class="rounded-circle img-thumbnail" /></td>
-            <td><img src="https://via.placeholder.com/32" class="rounded-circle img-thumbnail" /></td>
+            <td><img src="https://via.placeholder.com/32" @click="showModal" class="img-thumbnail" /></td>
+            <td><img src="https://via.placeholder.com/32" @click="showModal" class="img-thumbnail" /></td>
+            <td><img src="https://via.placeholder.com/32" @click="showModal" class="img-thumbnail" /></td>
+            <td><img src="https://via.placeholder.com/32" @click="showModal" class="rounded-circle img-thumbnail" /></td>
+            <td><img src="https://via.placeholder.com/32" @click="showModal" class="rounded-circle img-thumbnail" /></td>
             <td>
-              <div class="btn-group btn-group-sm">
-                <button class="btn btn-success">VIEW</button>
-                <button class="btn btn-primary">EDIT</button>
-                <button class="btn btn-danger">DELETE</button>
+              <div class="d-flex">
+                <button class="btn btn-success me-2 btn-sm">VIEW</button>
+                <button class="btn btn-primary me-2 btn-sm">EDIT</button>
+                <button
+                  class="btn btn-outline-danger btn-sm"
+                  @click="openDelete('User ' + n)"
+                >
+                  DELETE
+                </button>
               </div>
             </td>
           </tr>
@@ -97,6 +124,11 @@
         </button>
       </div>
     </div>
+
+    <!-- Delete Modal -->
+    <DeleteModal ref="deleteModal" @confirm="handleDelete" />
+    <IdentityModal ref="myModal" modalId="myModal" title="Id Front (Firstname Lastname)" />
+
   </div>
 </template>
 

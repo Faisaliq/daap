@@ -1,5 +1,5 @@
 <template>
-  <div class="container py-4">
+  <div class="container-fluid p-3">
     <HeaderComponent />
     <DashboardContent />
     <FooterComponent />
