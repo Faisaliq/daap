@@ -5,8 +5,10 @@
       <strong>DocAuth Admin Portal (DAAP)</strong>
     </div>
     <div>
-      <button class="btn btn-primary me-2">DEMO MODE</button>
-      <button class="btn btn-success">LOGOUT</button>
+      <router-link to="/user-profile" class="btn btn-primary me-2 rounded-pill">
+        DEMO MODE
+      </router-link>
+      <button class="btn btn-success rounded-pill">LOGOUT</button>
     </div>
   </div>
 </template>

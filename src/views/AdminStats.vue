@@ -6,7 +6,7 @@
     <div class="row text-center mb-4">
   <!-- Left big box -->
   <div class="col-md-6">
-    <div class="card shadow-sm border-success h-100">
+    <div class="card h-100">
       <div class="card-body d-flex flex-column justify-content-center">
         <h1 class="text-success mb-0">258</h1>
         <small class="text-muted">Verified MM/DD/YYYY</small>
@@ -101,7 +101,7 @@
             <td>{{ item.lastName }}</td>
             <td>{{ item.email }}</td>
             <td><i class="fa-solid fa-barcode text-warning"></i></td>
-            <td><i class="fa-solid fa-id-card text-success"></i></td>
+            <td><i class="fa-solid fa-id-card text-success" @click="showModal"></i></td>
             <td><i class="fa-solid fa-id-card text-success"></i></td>
             <td><i class="fa-solid fa-user text-info"></i></td>
             <td><i class="fa-solid fa-user text-secondary"></i></td>
@@ -125,6 +125,10 @@
       </select>
     </div>
 
+    <Modal ref="myModal" modalId="myModal" title="User Info">
+      <p>This content is passed via slot.</p>
+    </Modal>
+
     <FooterComponent />
   </div>
 </template>
@@ -132,7 +136,14 @@
 <script setup>
 import HeaderComponent from '../components/HeaderComponent.vue'
 import FooterComponent from '../components/FooterComponent.vue'
+import Modal from '../components/modals/IdentityModal.vue'
 import { ref, computed } from 'vue'
+
+const myModal = ref()
+
+function showModal() {
+  myModal.value.openModal()
+}
 
 const search = ref('')
 const sortBy = ref('')
