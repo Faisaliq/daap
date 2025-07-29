@@ -6,7 +6,7 @@
     <h1 class="h4 mb-0">Administrative Portal</h1>
     <div class="text-muted small">
       <span class="me-2 text-danger">● Real-time</span>
-      <span>08/04/2022 12:05:31</span>
+      <span>{{ currentTime }}</span>
     </div>
   </div>
 
@@ -210,6 +210,29 @@
 
 import HeaderComponent from '../components/HeaderComponent.vue'
 import FooterComponent from '../components/FooterComponent.vue'
-import { ref, computed } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+
+const currentTime = ref('')
+let timer = null
+
+function updateTime() {
+  const now = new Date()
+  const yyyy = now.getFullYear()
+  const mm = String(now.getMonth() + 1).padStart(2, '0')
+  const dd = String(now.getDate()).padStart(2, '0')
+  const hh = String(now.getHours()).padStart(2, '0')
+  const min = String(now.getMinutes()).padStart(2, '0')
+  const ss = String(now.getSeconds()).padStart(2, '0')
+  currentTime.value = `${yyyy}-${mm}-${dd} ${hh}:${min}:${ss}`
+}
+
+onMounted(() => {
+  updateTime()
+  timer = setInterval(updateTime, 1000)
+})
+
+onUnmounted(() => {
+  clearInterval(timer)
+})
 
 </script>
