@@ -3,12 +3,12 @@
   <!-- Header -->
    <HeaderComponent />
   <div class="d-flex justify-content-between align-items-center mb-3">
-      <h1 class="h4 mb-0">Administrative Portal</h1>
-      <div class="text-muted small">
-        <span class="me-2 text-danger">● Real-time</span>
-        <span>08/04/2022 12:05:31</span>
-      </div>
+    <h1 class="h4 mb-0">Administrative Portal</h1>
+    <div class="text-muted small">
+      <span class="me-2 text-danger">● Real-time</span>
+      <span>08/04/2022 12:05:31</span>
     </div>
+  </div>
 
   <!-- ID Images -->
   <div class="row text-center mb-4">
@@ -51,7 +51,7 @@
     <!-- User Details -->
     <div class="col-md-6">
         <div class="card mb-3">
-            <div class="card-header fw-bold bg-dark text-white">
+            <div class="card-header fw-bold bg-dark text-white" style="background-color: #105a8e !important;">
             USER DETAILS
             </div>
             <div class="card-body">
@@ -113,7 +113,7 @@
     <!-- History -->
     <div class="col-md-6">
       <div class="card mb-3">
-        <div class="card-header fw-bold bg-dark text-white">
+        <div class="card-header fw-bold bg-dark text-white" style="background-color: #105a8e !important;">
           USERNAME HISTORY
         </div>
         <div class="card-body p-0">
@@ -152,7 +152,7 @@
 
       <!-- System Details -->
       <div class="card">
-        <div class="card-header fw-bold bg-dark text-white">
+        <div class="card-header fw-bold bg-dark text-white" style="background-color: #105a8e !important;">
           SYSTEM DETAILS
         </div>
         <div class="card-body p-0">
