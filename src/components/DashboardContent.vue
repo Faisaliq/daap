@@ -128,25 +128,31 @@ onUnmounted(() => {
     </div>
 
     <!-- Pagination -->
-    <div class="d-flex flex-wrap justify-content-between align-items-center mt-4 bg-white p-3 rounded shadow-sm">
+    <div class="position-relative mt-4 bg-white p-3 rounded shadow-sm">
+      <!-- Left: Info -->
       <p class="mb-0 text-muted">1 of 10 pages (220 items)</p>
 
-      <div class="d-flex align-items-center gap-2">
-        <button class="btn btn-outline-secondary btn-sm">
-          <i class="fas fa-chevron-left me-1"></i> Previous
-        </button>
-
-        <select class="form-select form-select-sm w-auto text-center">
+      <!-- Center: Select -->
+      <div class="position-absolute top-50 start-50 translate-middle">
+        <select class="form-select form-select-sm text-center w-auto">
           <option>10</option>
           <option>25</option>
           <option>50</option>
         </select>
+      </div>
 
+      <!-- Right: Buttons -->
+      <div class="position-absolute top-50 end-0 translate-middle-y d-flex gap-2 me-3">
+        <button class="btn btn-outline-secondary btn-sm">
+          <i class="fas fa-chevron-left me-1"></i> Previous
+        </button>
         <button class="btn btn-outline-secondary btn-sm">
           Next <i class="fas fa-chevron-right ms-1"></i>
         </button>
       </div>
     </div>
+
+
 
     <!-- Delete Modal -->
     <DeleteModal ref="deleteModal" @confirm="handleDelete" />
